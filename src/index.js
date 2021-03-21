@@ -10,13 +10,23 @@ import movies from './reducers/index'
 
 // we will pass the store in the argument
 const store = createStore(movies)
-console.log('store', store)
-console.log('State', store.getState())
+  console.log('store', store)
+// console.log('Before State', store.getState())
+
+
+// // dispatching an action 
+// store.dispatch({
+//   type: 'ADD_MOVIES',
+//   movies:[{name: 'Superman'}]
+// })
+
+// console.log('After State', store.getState())
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App store={store} />
   </React.StrictMode>,
   document.getElementById('root')
 );
